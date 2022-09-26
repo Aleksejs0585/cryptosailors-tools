@@ -21,7 +21,7 @@ export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
 EOF
 source ~/.profile
 go version
-rm -rf go1.19.linux-amd64.tar.gz
+rm -rf go1.19.1.linux-amd64.tar.gz
 ```
 ### 3. If you would like update your Golang "Go" you need input following commands.
 ```
