@@ -30,7 +30,7 @@ rm -rvf /usr/local/go/
 ```
 rm -rvf go
 ```
-Than proceed to the [step 2](https://github.com/CryptoSailors/Tools/new/main#2-if-you-installing-golang-go-on-clear-server-you-need-input-following-commands) of this guide.
+Than proceed to the [step 2](https://github.com/CryptoSailors/Tools/tree/main/Install%20Golang%20%22Go%22#2-if-you-installing-golang-go-on-clear-server-you-need-input-following-commands) of this guide.
 ### 4. If you would like delete your Golang "Go" from your server you need input following commands.
 ```
 rm -rvf /usr/local/go/
