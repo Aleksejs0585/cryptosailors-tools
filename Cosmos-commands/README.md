@@ -59,4 +59,12 @@
 ```
 <cosmos> tx staking delegate <to-valoper> <ammountucosmo> --chain-id <chain-id> --from <your-wallet-name> --gas auto -y
 ```
- 
+#### Withdraw delegation rewards
+```
+<cosmos> tx distribution withdraw-all-rewards --chain-id <chain-id> --from <your-wallet-name> --gas auto -y
+```
+#### Withdraw rewards + Validator Commissions
+```
+<cosmos> tx distribution withdraw-rewards <your-valloper> --chain-id <chain-id> --from <your-wallet-name> --gas auto -y
+```
+
