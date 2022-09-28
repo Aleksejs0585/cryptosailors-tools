@@ -19,27 +19,26 @@
 #### Create your validator
 ```
 <cosmos> tx staking create-validator \ 
- --amount=<1000000ucosmo> \
+ --amount="<1000000ucosmo>" \
  --pubkey=$(<cosmos> tendermint show-validator) \
  --moniker="<moniker>" \
  --chain-id="<chain-id>" \
- --from=<your-wallet-name> \
- --commission-rate=0.1 \
+ --from="<your-wallet-name>" \
+ --commission-rate="0.1" \
  --commission-max-rate=0.15 \
  --commission-max-change-rate=0.1 \
  --min-self-delegation=1 \
  --website=<your_website> \
- --details=<Details about you> \
+ --details="<Details about you>" \
  --gas=auto
  
  ```
- #### Edit your validator 
+ #### Edit your validator (remove flags, which you don't want edit)
  ```
 <cosmos> tx staking edit-validator \
  --amount=<1000000ucosmo> \
- --pubkey=$(<cosmos> tendermint show-validator) \
  --moniker="<moniker>" \
- --chain-id="<chain-id>" \
+ --chain-id=<chain-id> \
  --from=<your-wallet-name> \
  --commission-rate=0.1 \
  --commission-max-rate=0.15 \
@@ -48,3 +47,16 @@
  --details=<Details about you>
  --gas=auto
  ```
+#### Check your keys
+```
+<cosmos> keys list
+```
+#### Check your balance 
+```
+<cosmos> q bank balances <your-wallet-address>
+```
+#### Delegate tokens
+```
+<cosmos> tx staking delegate <to-valoper> <ammountucosmo> --chain-id <chain-id> --from <your-wallet-name> --gas auto -y
+```
+ 
