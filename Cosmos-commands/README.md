@@ -36,16 +36,16 @@
  #### Edit your validator (remove flags, which you don't want edit)
  ```
 <cosmos> tx staking edit-validator \
- --amount=<1000000ucosmo> \
- --moniker="<moniker>" \
- --chain-id=<chain-id> \
- --from=<your-wallet-name> \
- --commission-rate=0.1 \
- --commission-max-rate=0.15 \
- --commission-max-change-rate=0.1 \
- --website=<your_website>
- --details=<Details about you>
- --gas=auto
+  --amount=<1000000ucosmo> \
+  --moniker="<moniker>" \
+  --chain-id=<chain-id> \
+  --from=<your-wallet-name> \
+  --commission-rate=0.1 \
+  --commission-max-rate=0.15 \
+  --commission-max-change-rate=0.1 \
+  --website=<your_website> \
+  --details=<Details about you> \
+  --gas=auto
  ```
 #### Check your keys
 ```
