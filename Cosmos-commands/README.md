@@ -67,7 +67,7 @@
 ```
 <cosmos> tx distribution withdraw-rewards <your-valloper> --chain-id <chain-id> --from <your-wallet-name> --gas auto -y
 ```
-#### If you run more than one Cosmos networks, you should update your peers. Don't forget to change folder diraction on the end of the commands.
+#### If you run more than one Cosmos networks, you should update your peers. Don't forget to change folder direction on the end of the commands.
 ```
 sed -i.bak -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://127.0.0.1:16658\"%; s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://127.0.0.1:16657\"%; s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:16060\"%; s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:16656\"%; s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":16660\"%" $HOME/.<cosmos>/config/config.toml
 ```
