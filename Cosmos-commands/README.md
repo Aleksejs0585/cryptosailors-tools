@@ -33,8 +33,6 @@
 --fees=500ucosmo \
 --identity=<your_indentity> \
 --y
-
- 
  ```
  #### Edit your validator (remove flags, which you don't want edit)
  ```
