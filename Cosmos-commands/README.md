@@ -32,7 +32,7 @@
 --details="<Details about you>" \
 --fees=500ucosmo \
 --identity=<your_indentity> \
---y
+-y
  ```
  #### Edit your validator (remove flags, which you don't want edit)
  ```
