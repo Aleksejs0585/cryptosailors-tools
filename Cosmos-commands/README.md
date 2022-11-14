@@ -56,6 +56,10 @@
 ```
 <cosmos> q bank balances <your-wallet-address>
 ```
+#### Send tokens from one account to the another account
+```
+<cosmos> tx staking delegate <from_wallet> <to_wallet> 1000000<ucosmo> --chain-id=<chain_id> --from wallet --fees 1000<ucosmo> -y
+```
 #### Delegate tokens
 ```
 <cosmos> tx staking delegate <to-valoper> <ammountucosmo> --chain-id <chain-id> --from <your-wallet-name> --gas auto -y
