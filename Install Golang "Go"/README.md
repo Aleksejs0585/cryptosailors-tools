@@ -6,6 +6,9 @@
 ```
 sudo apt update && sudo apt upgrade -y
 ```
+```
+sudo apt install make clang pkg-config libssl-dev libclang-dev build-essential git curl ntp jq llvm tmux htop screen unzip cmake -y
+```
 ### 2. If you installing Golang "Go" on clear server you need input following commands.
 The latest release of Golang "Go" you can find in this [link](https://go.dev/dl/)
 ```
