@@ -58,7 +58,7 @@
 ```
 #### Send tokens from one account to the another account
 ```
-<cosmos> tx staking delegate <from_wallet> <to_wallet> 1000000<ucosmo> --chain-id=<chain_id> --from wallet --fees 1000<ucosmo> -y
+<cosmos> tx bank send <your_account> <otheraccount> 10000000<ucosmo> --chain-id <chain-id>
 ```
 #### Delegate tokens
 ```
@@ -68,9 +68,9 @@
 ```
 <cosmos> tx distribution withdraw-all-rewards --chain-id <chain-id> --from <your-wallet-name> --gas auto -y
 ```
-#### Withdraw rewards + Validator Commissions
+#### Withdraw Validator Commissions
 ```
-<cosmos> tx distribution withdraw-rewards <your-valloper> --chain-id <chain-id> --from <your-wallet-name> --gas auto -y
+<cosmos> tx distribution withdraw-rewards <valoper> --commission -y --from <your_wallet> --chain-id <chain-id> --gas=auto 
 ```
 #### Unjail your validator
 ```
