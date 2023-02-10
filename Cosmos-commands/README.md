@@ -30,7 +30,7 @@
 --min-self-delegation=1 \
 --website=<your_website> \
 --details="<Details about you>" \
---fees=500ucosmo \
+--fees=500<ucosmo> \
 --identity=<your_indentity> \
 -y
  ```
