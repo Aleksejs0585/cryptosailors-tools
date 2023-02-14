@@ -12,8 +12,8 @@ sudo apt install make clang pkg-config libssl-dev libclang-dev build-essential g
 ### 2. If you installing Golang "Go" on clear server you need input following commands.
 The latest release of Golang "Go" you can find in this [link](https://go.dev/dl/)
 ```
-wget https://golang.org/dl/go1.20.linux-amd64.tar.gz
-sudo tar -C /usr/local -xzf go1.20.linux-amd64.tar.gz
+wget https://golang.org/dl/go1.19.5.linux-amd64.tar.gz
+sudo tar -C /usr/local -xzf go1.19.5.linux-amd64.tar.gz
 ```
 ```
 cat <<EOF >> ~/.profile
@@ -24,7 +24,7 @@ export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
 EOF
 source ~/.profile
 go version
-sudo rm -rf go1.20.linux-amd64.tar.gz
+sudo rm -rf go1.19.5.linux-amd64.tar.gz
 ```
 ### 3. If you would like update your Golang "Go" you need input following commands.
 ```
