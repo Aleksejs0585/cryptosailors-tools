@@ -28,6 +28,7 @@ EOF
 source ~/.profile
 go version
 sudo rm -rf /usr/src/go*.linux-amd64.tar.gz
+cd ~
 ```
 
 ### 3. If you would like update your Golang "Go" you need input following commands.
