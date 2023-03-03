@@ -90,7 +90,7 @@ sed -i.bak -e "s%^node = \"tcp://localhost:26657\"%node = \"tcp://localhost:1665
 
 ```
 COSMOS_PORT=20
-FOLDER=.<cosmos>
+FOLDER=<.cosmos>
 echo "export COSMOS_PORT=${COSMOS_PORT}" >> $HOME/.profile
 source $HOME/.profile
 ```
