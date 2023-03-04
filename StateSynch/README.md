@@ -10,6 +10,8 @@ Input your value instead `<.comsos>` and delete `<>`
 - Example `FOLDER=.nibid`
 ```
 FOLDER=<.cosmos>
+```
+```
 sed -i.bak -e "s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://0.0.0.0:26657\"%" $HOME/$FOLDER/config/config.toml
 sed -i.bak -e "s/^pruning *=.*/pruning = \"custom\"/" $HOME/$FOLDER/config/app.toml
 sed -i.bak -e "s/^pruning-interval *=.*/pruning-interval = \"17\"/" $HOME/$FOLDER/config/app.toml
@@ -24,8 +26,8 @@ Change `<cosmos>` on your binary name and delete `<>`
 ```
 echo -e "$(<cosmos> tendermint show-node-id)@$(curl -s ifconfig.me)$(grep -A 3 "\[p2p\]" ~/$FOLDER/config/config.toml | egrep -o ":[0-9]+")"
 ```
-The out put should be something like:
-`8dd57aaef961d9943d5d7f0fcae6683c331065a3@81.34.157.35:26656`
+The output should be something like:
+`8dd57aaef961d9943d5d7f0fcae6683c331065a3@81.34.157.35:26656` This peer we will use in our `Consumer` server later.
 
 ## 3. Check your IP
 
@@ -33,15 +35,58 @@ Restart your node than do:
 ```
 echo http://$(wget -qO- eth0.me):26657/
 ```
-You should receve `http://81.34.157.35:26657/` and then try to open it in your browser.
+You should receive `http://81.34.157.35:26657/` and then try to open it in your browser. This IP address we will use at our `Consumer` server later.
 
 <p align="left">
  <img src="https://i.postimg.cc/6qPvHs75/Untitled.jpg.jpg"width="300"/></a>
 </p>
 
-## 4. On new server 'Consumer' 
+## 4. On new server `Consumer`
+Install node on the new server. Do an `init` and proceed to configure `config.toml` and `app.toml`
 
+Input your value instead `<.comsos>` and delete `<>`
+- Example `FOLDER=.nibid`
+```
+FOLDER=<.cosmos>
+```
+```
+PEERS=8dd57aaef961d9943d5d7f0fcae6683c331065a3@81.34.157.35:26656
+```
+```
+SNAP_RPC=81.34.157.35:26657
+```
+```
+LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
+BLOCK_HEIGHT=$((LATEST_HEIGHT - 2000)); \
+TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
+```
+```
+echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
+```
 
+<p align="center">
+ <img src="https://i.postimg.cc/X7F3GVRk/Untitled.jpg"width="900"/></a>
+</p>
 
+```
+sed -i.bak -e  "s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" ~/$FOLDER/config/config.toml
+sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
+s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
+s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
+s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
+s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" ~/$FOLDER/config/config.toml
+```
+**Start your node.**
 
+#
 
+🔰[Our Telegram Channel](https://t.me/CryptoSailorsAnn)
+
+🔰[Our WebSite](cryptosailors.tech)
+
+🔰[Our Twitter](https://twitter.com/Crypto_Sailors)
+
+🔰[Our Youtube](https://www.youtube.com/@CryptoSailors)
+
+#### Guide created by 
+Pavel-LV | C.Sailors#7698 / @SeaInvestor
