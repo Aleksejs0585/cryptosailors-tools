@@ -1,7 +1,7 @@
-# In this tutorial, we will set up StateSynch configuration.
-- StateSynch - helps to synchronize almost from the last block through the distributor node. This helps to synchronize the node almost immediately after it is launched.
-- To run StateSynch, we need two servers. On the first server `distributing` we will keep a constantly working and synchronized node. On the second server `Consumer` we will run a fresh node and synchronize it using StateSynch.
-- **Please Note** - StateSynch may **NOT** always start immediately. This is her main drawback. This depends on the number of peers that have connected and synchronized from the "Distributor" node. Sometimes projects don't support StateSynch.
+# In this tutorial, we will set up StateSync configuration.
+- StateSync - helps to synchronize almost from the last block through the distributor node. This helps to synchronize the node almost immediately after it is launched.
+- To run StateSync, we need two servers. On the first server `distributing` we will keep a constantly working and synchronized node. On the second server `Consumer` we will run a fresh node and synchronize it using StateSync.
+- **Please Note** - StateSync may **NOT** always start immediately. This is her main drawback. This depends on the number of peers that have connected and synchronized from the "Distributor" node. Sometimes projects don't support StateSync.
 
 ## 1. Configuration of `config.toml` and `app.toml` on `distributing` server
 In the СOSMOS project, after the initiation of the node by command `cosmos init`, will be created `.cosmos` folder. Inside this folder located all related info about your node and validator.
