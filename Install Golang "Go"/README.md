@@ -15,19 +15,18 @@ cd /usr/src
 sudo rm -Rf go*
 sudo wget https://go.dev/dl/`curl -s https://go.dev/dl/?mode=json | jq -r '.[0].version'`.linux-amd64.tar.gz
 sudo tar -C /usr/local -xzf go*.linux-amd64.tar.gz
-cat <<EOF >> ~/.profile
+cat <<EOF >> ~/.bash_profile
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export GO111MODULE=on
 export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
 EOF
-source ~/.profile
+source ~/.bash_profile
 go version
 sudo rm -rf /usr/src/go*.linux-amd64.tar.gz
 cd ~
 ```
 
-Than proceed to the [step 2](https://github.com/CryptoSailors/Tools/tree/main/Install%20Golang%20%22Go%22#2-if-you-installing-golang-go-on-clear-server-you-need-input-following-commands) of this guide.
 ### 3. If you would like delete your Golang "Go" from your server you need input following commands.
 ```
 sudo rm -rvf /usr/local/go/
