@@ -11,6 +11,8 @@ sudo apt install make clang pkg-config libssl-dev libclang-dev build-essential g
 ```
 ### 2. If you installing Golang "Go" on clear server you need input following commands.
 ```
+sudo rm -rvf /usr/local/go/
+sudo rm -rvf go
 cd /usr/src
 sudo rm -Rf go*
 sudo wget https://go.dev/dl/`curl -s https://go.dev/dl/?mode=json | jq -r '.[0].version'`.linux-amd64.tar.gz
